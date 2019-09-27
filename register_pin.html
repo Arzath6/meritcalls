@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns:font-size="http://www.w3.org/1999/xhtml" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Homess</title>
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <!--<link rel="stylesheet" href="css/my-app.css">
+	<link rel="stylesheet" href="css/kitchen-sink.css"> -->
+
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/podapp.css">
+    <link rel="stylesheet" href="css/Glyphter.css">
+    <style>
+    body
+    {
+    background:#000;
+    }
+	.content-block {
+    margin: 25px 0;
+    padding: 0 7px;
+    box-sizing: border-box;
+}
+.navbar, .subnavbar, .toolbar
+	{
+	background:#000;
+	}
+	.search_card
+	{
+	position: relative;
+    top: 77px;
+    width: 92%;
+    background: #fff;
+    height: 215px;
+    text-align: -webkit-center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0, 0, 0, 0.11);
+    height: 370px;
+    border-radius: 8px;
+    z-index: 999;
+	}
+	.bottom_div
+	{
+	position: absolute;
+    bottom: 0px;
+    text-align: -webkit-center;
+    width: 95%;
+    margin: 0 2%;
+    padding: 15px 0px;
+    border-top: 1px solid #e2e2e2;
+	}
+	.list-block .item-media+.item-inner
+    {
+    margin-left:0px !important;
+    }
+    .list-block .item-content
+    {
+    padding-left:0px!important;
+    }
+    .pin_text {
+        width: 16.6%;
+    height: 40px;
+    border-bottom: 1px solid #4d4a4a;
+    background: #fff;
+    margin-right: 10px;
+}
+.pin_div
+{
+    display: flex;
+    text-align: -webkit-center;
+    justify-content: center;
+}
+.input_style
+{
+width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    border: none;
+    border-color: transparent;
+    text-align: -webkit-center;
+    font-size: 30px;
+    color: #5f5c5c;
+}
+.navbar-fixed .toolbar, .navbar-through .toolbar
+{
+top:55px;
+}
+.panel_icon
+	{
+	color: #fff;
+	}
+	.panel_lbl
+	{
+	color: #fff;
+    position: relative;
+    left: 10px;
+    bottom: 2px;
+	}
+	 input[type=number] {
+     -webkit-text-security: disc;
+        }
+        .notifications .item-inner {
+            padding-left: 10px !important;
+        }
+
+        </style>
+    <body>
+<div class="panel-overlay"></div>
+<div class="panel panel-left panel-reveal" style="background: #212121;">
+    <div class="content-block" style="position: relative;top: 25%;font-size: 1rem;">
+
+        <div style="padding: 10px 10px;    line-height: 2;" onclick="redirect_page('home')">
+            <i class="ic-logout panel_icon" ></i>
+            <label class="panel_lbl">Home</label>
+        </div>
+        <div style="padding: 10px 10px;    line-height: 2;" onclick="redirect_page('logout')">
+            <i class="ic-logout panel_icon" ></i>
+            <label class="panel_lbl">Logout</label>
+        </div>
+    </div>
+</div>
+<div class="views" style="background: #efefef;">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="pin" class="page" style="background: rgba(226, 226, 226, 0.46) !important;">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div style="width:100%;display:flex;">
+                            <div id="side_panel" class="open-left-panel" style="width:15%;text-align: -webkit-center;">
+                                <a href="#"   style="position: relative;top: 13px;"><img src="img/navbar_slider.png"style="width:23px;" /></a>
+                            </div>
+                            <div style="width:65%">
+                                <img src="img/logo.png" style="width:55px;position: relative;top:5px;" />
+                            </div>
+                            <div style="width:20%;text-align: -webkit-center;">
+                                <img src="img/navbar_logout.png" style="width:23px;position: relative;top: 12px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar tabbar">
+                    <div class="toolbar-inner">
+
+                    </div>
+                </div>
+                <div style="width: 100%;text-align: -webkit-center;">
+                <div class="search_card">
+                <div style="text-align: -webkit-left;width: 90%;padding-top: 15px;">
+                 <label>REGISTER YOUR PIN</label>
+                </div>
+                 <div style="width: 90%;    margin-top: 66px;text-align: -webkit-left;">
+                     <label style="color: #928e8e;">Enter your pin (6 digit number only)</label>
+                     <div class="pin_div">
+                         <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="fone" /></div>
+                         <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="ftwo"/></div>
+                         <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="fthree"/></div>
+                         <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="ffour"/></div>
+                         <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="ffive"/></div>
+                         <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="fsix"/></div>
+                     </div>
+
+                     <div style=" margin-top: 30px;">
+                         <label style="color: #928e8e;">Reenter your pin</label>
+                         <div class="pin_div">
+                             <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="reone" /></div>
+                             <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="retwo"/></div>
+                             <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="rethree"/></div>
+                             <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="refour"/></div>
+                             <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="refive"/></div>
+                             <div class="pin_text"><input class="input_style"type="number" maxlength="1" id="resix"/></div>
+                         </div>
+                     </div>
+                 </div>
+                    <a class="forget_lbl" onclick="erasepin()" style="float: left;position:relative;left: 15px;color: #928e8e;padding: 5px 0px;top: 17px;">
+                        <i class="icon-ic_erase-01"></i>
+                        <label style="padding-left:10px;">Reset</label>
+                    </a>
+                        <div class="bottom_div" onclick="regester_pin()">
+                        <label style="color: #65bb65;    font-size: 1rem;">Register Pin</label>
+                        </div>
+
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script>
+
+       var isPinMatced = false;
+      var myApp = new Framework7({
+	 materialRipple:true,
+	 material: true
+	 });
+	 var mainView = myApp.addView('.view-main');
+	  var $$ = Dom7;
+	  $$('.open-left-panel').on('click', function (e) {
+        // 'left' position to open Left panel
+
+        myApp.openPanel('left');
+        console.log("access");
+        });
+
+        $(document).ready(function(){
+
+        $('#fone').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#ftwo').focus();
+            });
+            $('#ftwo').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#fthree').focus();
+            });
+            $('#fthree').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#ffour').focus();
+            });
+            $('#ffour').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#ffive').focus();
+            });
+            $('#ffive').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#fsix').focus();
+            });
+
+        $('#fsix').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#reone').focus();
+            });
+        $('#reone').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#retwo').focus();
+            });
+            $('#retwo').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#rethree').focus();
+            });
+            $('#rethree').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#refour').focus();
+            });
+            $('#refour').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#refive').focus();
+            });
+            $('#refive').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#resix').focus();
+            });
+            $('#resix').on("keyup keypress",function (e) {
+
+
+                var boolvalue = status(this);
+                if(!boolvalue){
+
+
+                    if ($("#fone").val() == $("#reone").val() && $("#ftwo").val() == $("#retwo").val() && $("#fthree").val() == $("#rethree").val() && $("#ffour").val() == $("#refour").val() && $("#ffive").val() == $("#refive").val() && $("#fsix").val() == $("#resix").val())
+                    {
+                         isPinMatced = true;
+                        notification('Pin matched');
+
+                    }
+                    else {
+                        if ($("#fsix").val() != "") {
+                           isPinMatced= false;
+                           notification('Pin mismatched');
+                        }
+
+                    }
+                }
+                return boolvalue;
+            });
+        });
+        function status(param){
+            if($(param).val().length == 1)
+                 return false;
+                 return true;
+         }
+
+        function redirect_page(page)
+        {
+        if(page =="home")
+        window.location="home.html";
+         else if(page == "logout")
+        window.location="index.html";
+          myApp.closePanel();
+        }
+
+         var notifi_status =false
+        function notification(msg) {
+            if(notifi_status == false)
+            {
+            myApp.addNotification({
+                message: msg
+            });
+            notifi_status=true;
+            setTimeout(function () {
+
+                $(".notifications").find('ul').empty();
+                $(".notifications").attr('style', '');
+                notifi_status =false;
+            }, 2000);
+        }
+        }
+
+         function regester_pin()
+         {
+
+           //if($("#fone").val() != "" && $("#ftwo").val() != "" && $("#fthree").val() != "" && $("#ffour").val() != "" && $("#ffive").val() != "" && $("#fsix").val() != "")
+           $('input').map(function()
+           {
+           var val = $(this).val();
+           if(val == "" || val == null)
+           {
+           notification('Pin cannot be empty');
+           }
+           else
+           {
+           if(isPinMatced == true)
+           {
+           localStorage.userPin = $("#fone").val() + '~' + $("#ftwo").val() +'~'+ $("#fthree").val() +'~'+ $("#ffour").val() +'~'+ $("#ffive").val() +'~'+ $("#fsix").val();
+           window.location="login.html";
+           }
+           else
+           notification('Pin Mismatched');
+           }
+
+           });
+
+         }
+
+          function erasepin(){
+           $("input[type=number]").val("");
+           $('#fone').focus();
+        }
+
+</script>
+</body>

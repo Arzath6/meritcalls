@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+
+    <link rel="stylesheet" href="css/kitchen-sink.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/Glyphter.css">
+
+    <style>
+        body {
+            margin: 0;
+            background-image: url(img/bgscreen.png);
+            background-size: cover;
+        }
+
+        .background_img {
+            width: 100%;
+            position: fixed;
+        }
+
+        .center_div {
+            text-align:-webkit-center;
+            position: absolute;
+            margin: auto;
+            top: 0px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+        }
+
+        .pin_text {
+            width: 16.6%;
+            height: 40px;
+            background: rgba(76, 76, 76, 0.27);
+            margin-left: 10px;
+        }
+
+        .pin_div {
+            display: flex;
+            text-align:-webkit-center;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .input_style {
+            width: 100%;
+            box-sizing: border-box;
+            height: 100%;
+            border: none;
+            border-color: transparent;
+            text-align:-webkit-center;
+            background: rgba(76, 76, 76, 0.27);
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .back {
+            color: #fff;
+            position: relative;
+            top: 10px;
+            left: 6px;
+        }
+
+        .swiper-container {
+            height: 100%;
+        }
+
+        .logo_div {
+            text-align:-webkit-center;
+            position: relative;
+            top: 32%;
+        }
+
+        .logo {
+            width: 38%;
+            position: relative;
+            left: 2%;
+        }
+
+        .pin_num_lbl {
+            position: relative;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .login_btn {
+            border-top-left-radius: 2em;
+            border-bottom-left-radius: 2em;
+            border-top-right-radius: 2em;
+            border-bottom-right-radius: 2em;
+            padding: 8px 0px;
+            display: flex;
+            margin: 30px 12px 0px;
+            text-align:-webkit-center;
+            text-align:-webkit-center;
+            background: #fff;
+        }
+
+        .forget_lbl {
+            font-size: 0.7rem;
+        }
+
+        .list-block .input-item .floating-label, .list-block.inputs-list .floating-label {
+            color: #fff !important;
+        }
+
+        .list-block .focus-state .floating-label, .list-block .not-empty-state .floating-label {
+            color: #fff !important;
+        }
+
+        input[type=text], input[type=password] {
+            color: #fff !important;
+        }
+        <!-- --input static state - -->
+        .input-field:after {
+            background: #fff !important;
+            height: 0 !important;
+        }
+        <!-- --focus- -->
+		.focus-state .input-field:after, .focus-state .item-input-field:after, .input-field.focus-state:after, .input-field.not-empty-state:after, .item-input-field.focus-state:after, .item-input-field.not-empty-state:after, .not-empty-state .input-field:after, .not-empty-state .item-input-field:after {
+            background: #fff !important;
+        }
+
+        .input-field:after, .item-input-field:after {
+            height: 0px !important
+        }
+
+        .list-block {
+            margin: 0px !important;
+        }
+
+            .list-block .item-media + .item-inner {
+                margin-left: 0px !important;
+            }
+
+            .list-block .item-content {
+                padding-left: 0px !important;
+            }
+
+        .material-icons {
+            font-size: 1.8rem !important;
+        }
+
+        input[type=number] {
+            -webkit-text-security: disc;
+        }
+
+        @media only screen and (min-width: 601px) {
+            .logo {
+                width: 35%;
+            }
+
+            .forget_lbl {
+                font-size: 1rem;
+            }
+
+            .pin_text {
+                width: 16.6%;
+                height: 85px;
+                background: rgba(76, 76, 76, 0.27);
+                margin-left: 10px;
+            }
+
+            .pin_num_lbl {
+                position: relative;
+                font-size: 1.4rem;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main" style="padding:0">
+        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed toolbar-fixed" style="padding:0px">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="index" class="page" style="padding:0">
+                <div class="page-content" style="padding:0">
+                    <div>
+                        <img class="background_img" src="img/bgscreen.png" />
+                    </div>
+                    <div class="swiper-container">
+                        <!-- Slides wrapper -->
+
+
+
+
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+
+                                <div style="text-align: -webkit-center;position: absolute; bottom: 5%;width: 100%;">
+                                    <label style="text-align: -webkit-center;color: #fff;text-align: -webkit-center;"> © 2017 eBMS All Rights Reserved</label></div>
+
+                                <div style="height: 300px;position: relative;top: 27%;text-align:-webkit-center;">
+                                    <div style="width: 85%;">
+                                        <div>
+                                            <img src="img/logo.png" class="logo" />
+                                        </div>
+                                        <div style="position: relative;top: 50px;text-align:-webkit-center">
+
+                                            <label style="color: #fff;font-size: 25px;">Select Language</label>
+                                            <div style="width:100%;display:flex;    position: relative;    top: 70px;">
+                                                <div style="width:49%;    padding: 15px 0px;border: 1px solid #fff; position: relative;    right: 9px;" onclick="redirect('english')">
+                                                    <label style="    color: #fff;    font-size: 22px;    ">English</label>
+                                                </div>
+                                                <div style="width:49%;    padding: 15px 0px;border: 1px solid #fff;" onclick="redirect('hindi')">
+                                                    <label style="    color: #fff;    font-size: 22px;">हिंदी</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!------------------------------------------------------>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script>
+    function redirect(lang)
+    {
+    localStorage.setItem('language',lang);
+    window.location="login.html";
+    }
+</script>
+
+</body>
+</html>

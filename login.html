@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <link rel="stylesheet" href="css/kitchen-sink.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/Glyphter.css">
+    <style>
+        body {
+            margin: 0;
+            background-image: url(img/bgscreen.png);
+            background-size: cover;
+        }
+
+        .background_img {
+            width: 100%;
+            position: fixed;
+        }
+
+        .center_div {
+            text-align: -webkit-center;
+            position: absolute;
+            margin: auto;
+            top: 0px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+        }
+
+        .pin_text {
+            width: 16.6%;
+            height: 40px;
+            background: rgba(76, 76, 76, 0.27);
+            margin-left: 10px;
+        }
+
+        .pin_div {
+            display: flex;
+            text-align: -webkit-center;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .input_style {
+            width: 100%;
+            box-sizing: border-box;
+            height: 100%;
+            border: none;
+            border-color: transparent;
+            text-align: -webkit-center;
+            background: rgba(76, 76, 76, 0.27);
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .back {
+            color: #fff;
+            position: relative;
+            top: 10px;
+            left: 6px;
+        }
+
+        .swiper-container {
+            height: 100%;
+        }
+
+        .logo_div {
+            text-align: -webkit-center;
+            position: relative;
+            top: 32%;
+        }
+
+        .logo {
+            width: 38%;
+            position: relative;
+            left: 2%;
+        }
+
+        .pin_num_lbl {
+            position: relative;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .login_btn {
+            border-top-left-radius: 2em;
+            border-bottom-left-radius: 2em;
+            border-top-right-radius: 2em;
+            border-bottom-right-radius: 2em;
+            padding: 8px 0px;
+            display: flex;
+            margin: 30px 12px 0px;
+            text-align: -webkit-center;
+            text-align: -webkit-center;
+            background: #fff;
+        }
+
+        .forget_lbl {
+            font-size: 0.8rem;
+        }
+
+        .list-block .input-item .floating-label, .list-block.inputs-list .floating-label {
+            color: #fff !important;
+        }
+
+        .list-block .focus-state .floating-label, .list-block .not-empty-state .floating-label {
+            color: #fff !important;
+        }
+
+        input[type=text], input[type=password] {
+            color: #fff !important;
+        }
+        <!-- --input static state - -->
+        .input-field:after {
+            background: #fff !important;
+            height: 0 !important;
+        }
+        <!-- --focus- -->
+        .focus-state .input-field:after, .focus-state .item-input-field:after, .input-field.focus-state:after, .input-field.not-empty-state:after, .item-input-field.focus-state:after, .item-input-field.not-empty-state:after, .not-empty-state .input-field:after, .not-empty-state .item-input-field:after {
+            background: #fff !important;
+        }
+
+        .input-field:after, .item-input-field:after {
+            height: 0px !important
+        }
+
+        .list-block {
+            margin: 0px !important;
+        }
+
+            .list-block .item-media + .item-inner {
+                margin-left: 0px !important;
+            }
+
+            .list-block .item-content {
+                padding-left: 0px !important;
+            }
+
+        .material-icons {
+            font-size: 1.8rem !important;
+        }
+
+        input[type=number] {
+            -webkit-text-security: disc;
+        }
+
+        @media only screen and (min-width: 601px) {
+            .logo {
+                width: 35%;
+            }
+
+            .forget_lbl {
+                font-size: 1rem;
+            }
+
+            .pin_text {
+                width: 16.6%;
+                height: 85px;
+                background: rgba(76, 76, 76, 0.27);
+                margin-left: 10px;
+            }
+
+            .pin_num_lbl {
+                position: relative;
+                font-size: 1.4rem;
+                color: #fff;
+            }
+        }
+
+        .english_lbl {
+            display: none;
+        }
+
+        .hindi_lbl {
+            display: none;
+        }
+
+        .lang_show {
+            display: block !important;
+        }
+
+        .notifications .item-inner {
+            padding-left: 10px !important;
+        }
+
+        a.active-state {
+            background: rgba(226, 226, 226, 0.37);
+        }
+
+         a.ripple-wave
+         {
+       background:#e2e2e2;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main" style="padding:0">
+            <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-fixed toolbar-fixed" style="padding:0px">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page" style="padding:0">
+                    <div class="page-content" style="padding:0">
+                        <div>
+                            <img class="background_img" src="img/bgscreen.png" />
+                        </div>
+                        <div class="swiper-container">
+                            <!-- Slides wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div style="height: 300px;position: relative;top: 27%;text-align:-webkit-center;">
+                                        <div style="width: 85%;">
+                                            <div>
+                                                <img src="img/logo.png" class="logo" />
+                                            </div>
+                                            <div style="position: relative;top: 30px;text-align:-webkit-auto">
+                                                <form id="NamePasswordSubmit" class="list-block media-list">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="item-content">
+                                                                <div class="item-media" style="margin-bottom:-2px;"><i class="icon-ic_user-01" style="color:#ffffff;font-size:25px;"></i></div>
+                                                                <div class="item-inner">
+                                                                    <div data-id="Login-Username" class="item-title floating-label input_lbl_color"></div>
+                                                                    <div class="item-input">
+                                                                        <input type="text" name="userName" id="userName" class="displayName" style="border-bottom:1px solid #fff">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="item-content">
+                                                                <div class="item-media" style="margin-bottom:-2px;"><i class="icon-ic_password-01" style="color:#ffffff;font-size:25px;"></i></div>
+                                                                <div class="item-inner">
+                                                                    <div data-id="Login-Password" class="item-title floating-label input_lbl_color"></div>
+                                                                    <div class="item-input">
+                                                                        <input type="password" name="password" id="password" class="displayName" style="border-bottom:1px solid #fff">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </form>
+                                                <div class="login_btn" onclick="navigate_page();">
+                                                    <div style="width: 100%;">Login</div>
+                                                </div>
+
+                                                <div id="progress"class="col-100" style="position:relative;top:43px;display:none;"><span class="preloader preloader-white"><span class="preloader-inner"><span class="preloader-inner-gap"></span><span class="preloader-inner-left"><span class="preloader-inner-half-circle"></span></span><span class="preloader-inner-right"><span class="preloader-inner-half-circle"></span></span></span></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!------------------------------------------------------>
+                                <div class="swiper-slide">
+                                    <div style="height: 300px;position: relative;top: 27%;text-align:-webkit-center;">
+                                        <div style="width: 85%;">
+                                            <div>
+                                                <img src="img/logo.png" class="logo" />
+                                            </div>
+                                            <form id="PinSubmit">
+                                                <div style="position: relative;top: 70px;">
+                                                    <label data-id="Login-Pinno" class="pin_num_lbl"></label>
+                                                    <div class="pin_div">
+                                                        <div class="pin_text"><input class="input_style" type="number" maxlength="1" id="fone" /></div>
+                                                        <div class="pin_text"><input class="input_style" type="number" maxlength="1" id="ftwo" /></div>
+                                                        <div class="pin_text"><input class="input_style" type="number" maxlength="1" id="fthree" /></div>
+                                                        <div class="pin_text"><input class="input_style" type="number" maxlength="1" id="ffour" /></div>
+                                                        <div class="pin_text"><input class="input_style" type="number" maxlength="1" id="ffive" /></div>
+                                                        <div class="pin_text"><input class="input_style" type="number" maxlength="1" id="fsix" /></div>
+                                                    </div>
+                                                    <div style="display:block;color:#fff;position: relative;top: 10px;text-align: -webkit-right;padding: 5px 0px">
+                                                        <a class="forget_lbl" onclick="erasepin()" style="float: left;position:relative;left: 15px;color:#ffffff;padding: 5px 0px;">
+                                                            <i class="icon-ic_erase-01"></i>
+                                                            <label style="padding-left:10px;">Reset</label>
+                                                        </a>
+                                                        <a class="forget_lbl" style="float: right;position:relative;color:#ffffff;padding: 5px 0px;">
+                                                            <label>Forget Pin Number?</label>
+                                                        </a>
+                                                    </div>
+                                                    <div id="err_msg" style="position: relative;color: #fff;top: 64px;display: -webkit-inline-box;display:none"></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+        var myApp = new Framework7({
+            materialRipple: true,
+            material: true
+        });
+     var split
+        var $$ = Dom7;
+        var init_slider =1;
+         var mySwiper = myApp.swiper('.swiper-container', {
+                initialSlide: 1,
+                speed: 400,
+                spaceBetween: 100
+            });
+        $(document).ready(function () {
+              if( localStorage.userPin== undefined ||  localStorage.userPin== 'undefined' )
+                {
+                mySwiper.slideTo(0, 400, false);
+                split="new user"
+                }
+                else
+                {
+                mySwiper.slideTo(1, 400, false);
+               split = localStorage.userPin.split('~');
+                }
+            if (localStorage.getItem("language") == "hindi") {
+                switchLanguage(localStorage.getItem("language"));
+            }
+            else if (localStorage.getItem("language") == "english") {
+                switchLanguage(localStorage.getItem("language"));
+            }
+            $(".input_style").val("");
+
+
+            $(".back").click(function () {
+                window.location = "login.html";
+            });
+            $('#fone').focus();
+
+            $('#fone').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#ftwo').focus();
+            });
+            $('#ftwo').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#fthree').focus();
+            });
+            $('#fthree').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#ffour').focus();
+            });
+            $('#ffour').keypress(function (e) {
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#ffive').focus();
+            });
+            $('#ffive').keypress(function (e) {
+                console.log("ffive");
+                if($(this).val().length == 1) {
+                     return false;
+                }
+                $('#fsix').focus();
+            });
+
+            $('#fsix').on("keyup keypress",function (e) {
+                var boolvalue = status(this);
+                console.log(boolvalue)
+                if(!boolvalue){
+                   if(split != 'new user')
+                   {
+                    if ($("#fone").val() == split[0] && $("#ftwo").val() == split[1] && $("#fthree").val() == split[2] && $("#ffour").val() == split[3] && $("#ffive").val() == split[4] && $("#fsix").val() == split[5]) {
+
+                        setTimeout(function () {
+                            window.location = "home.html";
+                        }, 500);
+                    }
+                    else {
+                        if ($("#fsix").val() != "") {
+                            notification('Incorrect Pin');
+                        }
+                        }
+                    }
+                    else
+                        {
+                        notification('Please create a pin first');
+                        }
+                }
+                return boolvalue;
+            });
+
+              $("#NamePasswordSubmit").on("keypress", function(e) {
+               if(e.which === 13) {
+                navigate_page();
+                 }
+                });
+
+                 });
+
+        function erasepin(){
+           $("input[type=number]").val("");
+           $('#fone').focus();
+        }
+
+         function status(param){
+            if($(param).val().length == 1)
+                 return false;
+                 return true;
+         }
+        function navigate_page() {
+
+            $("#progress").css("display","block")
+             var testdata = {
+                 "userName": $("#userName").val(),
+                 "password": $("#password").val(),
+                 "deviceId": "e32576e9caf5a135cc2fa029cd8535bae30f6bd58627ef584ba6422e2b6619f2",
+                 "deviceType": "iOS"
+             }
+             if($("#userName").val() !="" && $("#password").val() != "")
+             {
+                 $.ajax({
+                //url: "http://35.186.157.140/ebmsPOD/api/user/Authenticate",
+                url: "http://localhost/meritcalls/api/checklogin.html",
+                type: "POST",
+                //dataType: "json",
+                data: JSON.stringify(testdata),
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",                
+                success: function (data) {
+
+                    if(data.statusCode == "SUCCESS"){
+                        setTimeout(function()
+                        {
+                        $("#progress").css("display","none");
+                        window.location = "home.html";
+                        },1000);
+                    }
+                    else if(data.statusCode == "INVALID_CREDENTIALS"){
+                        $("#progress").css("display","none");
+                        notification('Invalid username/Password');
+                    }
+                },
+                     error:function(data){
+                    $("#progress").css("display","none")
+                    notification('Network connection failed');
+                }
+                });
+                
+            }
+            else
+            {
+                $("#progress").css("display","none")
+                 notification('username / password cannot be empty');
+            }
+        }
+        var notifi_status =false
+        function notification(msg) {
+            if(notifi_status == false)
+            {
+            myApp.addNotification({
+                message: msg
+            });
+            notifi_status=true;
+            setTimeout(function () {
+
+                $(".notifications").find('ul').empty();
+                $(".notifications").attr('style', '');
+                notifi_status =false;
+            }, 2000);
+        }
+        }
+
+        function switchLanguage(lang) {
+            var langdata = [];
+            $.getJSON("js/language.json", function (data) {
+                langdetail(data, lang);
+            });
+        }
+        function langdetail(data, lang) {
+            $.each(data, function (key, value) {
+                $.each(value, function (key, value) {
+                    if (key == lang) {
+                        insertlang(value);
+                    }
+                });
+            });
+        }
+        function insertlang(data) {
+            var i = 0;
+            $.each(data, function (key, value) {
+                if (key == "Login") {
+                    $.each(value, function (key, value) {
+                        $("[data-id="+key+"]").html(value);
+                    });
+                }
+            });
+        }
+
+
+    </script>
+</body>
+</html>
